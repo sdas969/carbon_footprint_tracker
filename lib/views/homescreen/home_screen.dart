@@ -1,3 +1,4 @@
+import 'package:carbon_footprint_tracker/views/homescreen/app_bar_title_widget.dart';
 import 'package:carbon_footprint_tracker/views/homescreen/app_content.dart';
 import 'package:carbon_footprint_tracker/views/homescreen/home_screen_appbar_content.dart';
 import 'package:carbon_footprint_tracker/widgets/custom_app_bar.dart';
@@ -31,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         CustomAppBar(
             scrollController: _scrollController,
             imgUrl: "",
+            title: AppBarTitleWidget(scrollController: _scrollController),
             flexibleSpace:
                 HomeScreenAppBarContent(scrollController: _scrollController)),
         const AppContent()

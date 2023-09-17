@@ -15,6 +15,7 @@ class CustomAppBar extends StatelessWidget {
       this.widgets = const [],
       this.pinned = false,
       this.elevation = 10,
+      this.title,
       this.expandedHeight = 400,
       this.titleTextStyle = const TextStyle(
           fontSize: 25, fontWeight: FontWeight.w900, color: Colors.white),
@@ -34,6 +35,7 @@ class CustomAppBar extends StatelessWidget {
   final Widget? icon;
   final ScrollController scrollController;
   final List<Widget> widgets;
+  final Widget? title;
 
   @override
   Widget build(BuildContext context) => SliverAppBar(
@@ -45,14 +47,7 @@ class CustomAppBar extends StatelessWidget {
       bottom: bottom,
       actions: actions,
       expandedHeight: expandedHeight,
-      //  centerTitle: true,
-      title: FadeOnScroll(
-          zeroOpacityOffset: 150,
-          scrollController: scrollController,
-          child: const Text(
-            "Hi, Smarajit",
-            style: TextStyle(fontSize: 30),
-          )),
+      title: title,
       flexibleSpace: flexibleSpace ??
           FlexibleSpaceBar(
               background: FadeOnScroll(
