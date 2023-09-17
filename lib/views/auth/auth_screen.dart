@@ -62,10 +62,11 @@ class _AuthScreenState extends State<AuthScreen> {
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const HomeScreen()));
       } on FirebaseAuthException catch (error) {
+        print(error.code);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-            content: Text(error.message!.replaceAll("_", " ").toUpperCase())));
+            content: Text(error.message ?? "Error")));
       }
     }
 
