@@ -7,16 +7,14 @@ class AddDataButton extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return TextButton.icon(
-        onPressed: () => showModalBottomSheet(
-            isScrollControlled: true,
-            useSafeArea: true,
-            enableDrag: true,
-            showDragHandle: true,
-            context: context,
-            builder: (context) => const AddDataBottomSheetContent()),
-        icon: const Icon(Icons.add),
-        label: const Text("Add Data"));
-  }
+  Widget build(BuildContext context) => TextButton.icon(
+      onPressed: () => showModalBottomSheet(
+          isScrollControlled: true,
+          useSafeArea: true,
+          enableDrag: true,
+          showDragHandle: true,
+          context: context,
+          builder: (context) => const AddDataBottomSheetContent()),
+      icon: const Icon(Icons.add),
+      label: const Text("Add Data"));
 }

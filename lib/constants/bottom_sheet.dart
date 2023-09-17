@@ -8,7 +8,7 @@ Map<int, CategoryModel> categories = {
       icon: Icons.car_crash,
       id: 0,
       label: "Distance Traveled",
-      hintText: "Enter the distance you traveled (in kilometers).",
+      hintText: "Enter the distance you traveled (km).",
       description:
           "Track your emissions from various modes of transportation, including cars, public transit, biking, and walking.",
       lottieURL: transportationLottieURL),
@@ -17,7 +17,7 @@ Map<int, CategoryModel> categories = {
       icon: Icons.electric_bolt_rounded,
       id: 1,
       label: "Monthly Electricity Usage",
-      hintText: "Input your monthly electricity usage (in kWh).",
+      hintText: "Input your monthly electricity usage (kWh).",
       description:
           "Monitor your carbon footprint from electricity, heating, and other energy sources in your home.",
       lottieURL: electricityLottieURL),
@@ -26,7 +26,7 @@ Map<int, CategoryModel> categories = {
       icon: Icons.ac_unit_rounded,
       id: 2,
       label: "Appliance Energy Consumption",
-      hintText: "Specify the energy consumption of your appliance (in kWh).",
+      hintText: "Specify the energy consumption of your appliance (kWh).",
       description:
           "Keep tabs on energy usage from household appliances like refrigerators, air conditioners, and electronics.",
       lottieURL: appliancesLottieURL),
@@ -35,7 +35,7 @@ Map<int, CategoryModel> categories = {
       icon: Icons.flight_takeoff_rounded,
       id: 3,
       label: "Distance Traveled",
-      hintText: "Specify the distance you traveled (in kilometers).",
+      hintText: "Specify the distance you traveled (km).",
       description:
           "Calculate emissions from travel, hotel stays, and recreational activities to make eco-friendly choices.",
       lottieURL: travelLottieURL)

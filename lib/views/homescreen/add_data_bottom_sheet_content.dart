@@ -6,17 +6,15 @@ class AddDataBottomSheetContent extends StatelessWidget {
   const AddDataBottomSheetContent({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return DraggableScrollableSheet(
-        snap: true,
-        snapSizes: const [0.5, 0.75],
-        expand: false,
-        builder: (context, controller) =>
-            LayoutBuilder(builder: (context, constraints) {
-              return SingleChildScrollView(
-                padding: const EdgeInsets.all(8),
-                controller: controller,
-                child: Column(
+  Widget build(BuildContext context) => DraggableScrollableSheet(
+      snap: true,
+      snapSizes: const [0.5, 0.75],
+      expand: false,
+      builder: (context, controller) => LayoutBuilder(
+          builder: (context, constraints) => SingleChildScrollView(
+              padding: const EdgeInsets.all(8),
+              controller: controller,
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const Padding(
@@ -29,15 +27,9 @@ class AddDataBottomSheetContent extends StatelessWidget {
                         physics: const NeverScrollableScrollPhysics(),
                         controller: controller,
                         itemCount: categories.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2),
-                        itemBuilder: (context, index) => CategoryWidget(
-                              categoryData: categories[index]!,
-                            )),
-                  ],
-                ),
-              );
-            }));
-  }
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: constraints.maxWidth > 600 ? 4 : 2),
+                        itemBuilder: (context, index) =>
+                            CategoryWidget(categoryData: categories[index]!))
+                  ]))));
 }

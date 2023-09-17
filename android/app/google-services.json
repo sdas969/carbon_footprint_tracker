@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "321420766532",
+    "project_id": "ecotrack-2f934",
+    "storage_bucket": "ecotrack-2f934.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321420766532:android:7daa44c7c6596937b5fb11",
+        "android_client_info": {
+          "package_name": "com.example.carbon_footprint_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLhjantuuuR7mmj0edkJkITKF6Y7G2m1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

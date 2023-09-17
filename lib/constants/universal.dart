@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -53,3 +54,4 @@ final AppBarTheme _appBarTheme = AppBarTheme(
     toolbarTextStyle: _textTheme.bodyMedium);
 const appButtonColor = Color(0xff49847b);
 final defaultBorderRadius = BorderRadius.circular(20);
+final SetOptions setOptions = SetOptions(merge: true);
