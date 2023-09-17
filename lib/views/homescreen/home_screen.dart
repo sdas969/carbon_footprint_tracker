@@ -1,7 +1,6 @@
-import 'package:carbon_footprint_tracker/constants/universal.dart';
 import 'package:carbon_footprint_tracker/views/homescreen/app_content.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/home_screen_appbar_content.dart';
 import 'package:carbon_footprint_tracker/widgets/custom_app_bar.dart';
-import 'package:carbon_footprint_tracker/widgets/fade_on_scroll.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,49 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
           body: CustomScrollView(controller: _scrollController, slivers: [
         CustomAppBar(
             scrollController: _scrollController,
-            actions: const [],
             imgUrl: "",
-            flexibleSpace: FlexibleSpaceBar(
-              background: FadeOnScroll(
-                  scrollController: _scrollController,
-                  child: const SafeArea(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: kToolbarHeight,
-                        ),
-                        Expanded(
-                            child: FittedBox(
-                          child: CircularProgressIndicator(
-                            value: 0.5,
-                          ),
-                        )),
-                        Row(
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: ListTile(
-                                trailing: Icon(Icons.keyboard_arrow_right),
-                                leading: Icon(Icons.ac_unit),
-                                subtitle: Text("Tap to edit"),
-                                title: Text("506kg" + " Monthly Limit"),
-                              ),
-                            ),
-                            Expanded(
-                              child: ListTile(
-                                trailing: Icon(Icons.keyboard_arrow_right),
-                                leading: Icon(Icons.ac_unit),
-                                subtitle: Text("Tap to edit"),
-                                title: Text("506kg" + " Monthly Limit"),
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  )),
-            ),
-            titleString: appTitle),
+            flexibleSpace:
+                HomeScreenAppBarContent(scrollController: _scrollController)),
         const AppContent()
       ]));
 }

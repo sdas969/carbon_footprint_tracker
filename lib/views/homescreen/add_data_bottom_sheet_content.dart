@@ -1,3 +1,5 @@
+import 'package:carbon_footprint_tracker/constants/bottom_sheet.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/category_widget.dart';
 import 'package:flutter/material.dart';
 
 class AddDataBottomSheetContent extends StatelessWidget {
@@ -6,17 +8,36 @@ class AddDataBottomSheetContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
+        snap: true,
+        snapSizes: const [0.5, 0.75],
         expand: false,
         builder: (context, controller) =>
             LayoutBuilder(builder: (context, constraints) {
-              return GridView.builder(
-                  controller: controller,
-                  itemCount: 10,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3),
-                  itemBuilder: (context, index) => Card(
-                        color: Colors.amber,
-                      ));
+              return SingleChildScrollView(
+                padding: const EdgeInsets.all(8),
+                controller: controller,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+                        child:
+                            Text("Categories", style: TextStyle(fontSize: 30))),
+                    GridView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        controller: controller,
+                        itemCount: categories.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2),
+                        itemBuilder: (context, index) => CategoryWidget(
+                              categoryData: categories[index]!,
+                            )),
+                  ],
+                ),
+              );
             }));
   }
 }

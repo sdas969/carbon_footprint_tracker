@@ -26,14 +26,12 @@ final darkTextTheme = _textTheme.copyWith(
     bodySmall: darkTextStyle);
 final ThemeData darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
     textTheme: darkTextTheme,
+    buttonTheme: const ButtonThemeData(buttonColor: appButtonColor),
     textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: const Color(0xff49847b))),
+            foregroundColor: Colors.white, backgroundColor: appButtonColor)),
     inputDecorationTheme: darkInputDecorationTheme,
     appBarTheme: _appBarTheme,
-    // colorScheme: const ColorScheme.dark().copyWith(primary: inidicatorColor),
-    //  indicatorColor: inidicatorColor,
     primaryTextTheme: darkTextTheme);
 final InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
     prefixIconColor: Colors.red,
@@ -53,5 +51,5 @@ final AppBarTheme _appBarTheme = AppBarTheme(
     iconTheme: const IconThemeData(color: Colors.white),
     titleTextStyle: _textTheme.bodyMedium,
     toolbarTextStyle: _textTheme.bodyMedium);
-
+const appButtonColor = Color(0xff49847b);
 final defaultBorderRadius = BorderRadius.circular(20);

@@ -1,6 +1,6 @@
-import 'package:carbon_footprint_tracker/constants/universal.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/home_screen.dart';
+import 'package:carbon_footprint_tracker/base_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,14 +9,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: darkTheme,
-      title: appTitle,
-      home: const HomeScreen(),
-    );
-  }
+  Widget build(BuildContext context) => MultiProvider(
+      providers: const [], builder: (context, _) => const BaseScreen());
 }
