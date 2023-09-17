@@ -1,8 +1,11 @@
+import 'package:carbon_footprint_tracker/providers/emission_provider.dart';
+import 'package:carbon_footprint_tracker/providers/user_provider.dart';
 import 'package:carbon_footprint_tracker/views/homescreen/app_bar_title_widget.dart';
 import 'package:carbon_footprint_tracker/views/homescreen/app_content.dart';
 import 'package:carbon_footprint_tracker/views/homescreen/home_screen_appbar_content.dart';
 import 'package:carbon_footprint_tracker/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,9 +16,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late ScrollController _scrollController;
+  late EmissionProvider _emissionProvider;
+  late UserProvider _userProvider;
 
   @override
   void initState() {
+    _emissionProvider = Provider.of<EmissionProvider>(context, listen: false);
+    _userProvider = Provider.of<UserProvider>(context, listen: false);
+    if (_userProvider.userData == null) {
+      _userProvider.initData();
+    }
+    if (_emissionProvider.perCategoryStats == null) {
+      _emissionProvider.initData(null);
+    }
     _scrollController = ScrollController();
     super.initState();
   }

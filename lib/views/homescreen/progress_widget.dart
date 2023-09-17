@@ -18,6 +18,7 @@ class ProgressWidget extends StatelessWidget {
                       Consumer<EmissionProvider>(
                           builder: (context, emissionProvider, _) {
                         final double? data = (userProvider.userData == null ||
+                                userProvider.userData!.dailyLimit == null ||
                                 emissionProvider.currDayStats == null)
                             ? null
                             : emissionProvider.currDayStats! /
