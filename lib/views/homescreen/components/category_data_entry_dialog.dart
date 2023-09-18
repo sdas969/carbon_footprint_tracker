@@ -33,6 +33,7 @@ class _CategoryDataEntryDialogState extends State<CategoryDataEntryDialog> {
               title: Text(widget.categoryData.name),
               children: [
                 Lottie.asset(widget.categoryData.lottieURL,
+                    frameRate: FrameRate.max,
                     height: constraints.maxWidth,
                     width: constraints.maxWidth,
                     repeat: true,
@@ -42,6 +43,7 @@ class _CategoryDataEntryDialogState extends State<CategoryDataEntryDialog> {
                     style: const TextStyle(fontSize: 16)),
                 const SizedBox(height: 30),
                 TextField(
+                    controller: _textEditingController,
                     decoration: InputDecoration(
                         labelText: widget.categoryData.label,
                         hintText: widget.categoryData.hintText),

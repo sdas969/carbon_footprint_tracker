@@ -38,5 +38,6 @@ class EmissionProvider extends ChangeNotifier {
   Future setData(DateTime date, int id, double emissionData) async {
     await EmissionDatabaseService().setData(date, id, emissionData);
     await initData(date);
+    notifyListeners();
   }
 }

@@ -1,3 +1,7 @@
+import 'package:carbon_footprint_tracker/views/auth/auth_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 bool compareDate(DateTime date1, DateTime date2) =>
     date1.day == date2.day &&
     date1.month == date2.month &&
@@ -29,4 +33,11 @@ String? carbonLimitValidator(value) {
     return "Carbon Limit should be grater than 0";
   }
   return null;
+}
+
+completeOnboard(BuildContext context) async {
+  final sharedPref = await SharedPreferences.getInstance();
+  sharedPref.setBool("hasOnboarded", true);
+  Navigator.pushReplacement(
+      context, MaterialPageRoute(builder: (context) => const AuthScreen()));
 }

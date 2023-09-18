@@ -62,7 +62,6 @@ class _AuthScreenState extends State<AuthScreen> {
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const HomeScreen()));
       } on FirebaseAuthException catch (error) {
-        print(error.code);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
@@ -84,7 +83,8 @@ class _AuthScreenState extends State<AuthScreen> {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Lottie.asset(co2LottieURL),
+                            Lottie.asset(co2LottieURL,
+                                frameRate: FrameRate.max),
                             const Text(appTitle,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
@@ -93,6 +93,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                     letterSpacing: 2)),
                             const SizedBox(height: 20),
                             TextFormField(
+                                controller: _nameController,
                                 enabled: !isLoading,
                                 validator: nameValidator,
                                 decoration: const InputDecoration(
@@ -100,6 +101,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 keyboardType: TextInputType.name),
                             const SizedBox(height: 15),
                             TextFormField(
+                                controller: _emailController,
                                 enabled: !isLoading,
                                 validator: emailValidator,
                                 decoration: const InputDecoration(
@@ -108,6 +110,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 keyboardType: TextInputType.emailAddress),
                             const SizedBox(height: 15),
                             TextFormField(
+                                controller: _passwordController,
                                 enabled: !isLoading,
                                 decoration: const InputDecoration(
                                     labelText: "Password",
@@ -116,6 +119,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 obscureText: true),
                             const SizedBox(height: 15),
                             TextFormField(
+                                controller: _emissionController,
                                 enabled: !isLoading,
                                 validator: carbonLimitValidator,
                                 decoration: const InputDecoration(

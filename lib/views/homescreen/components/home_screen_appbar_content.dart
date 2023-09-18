@@ -1,5 +1,5 @@
-import 'package:carbon_footprint_tracker/views/homescreen/highlights_widget.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/progress_widget.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/highlights_widget.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/progress_widget.dart';
 import 'package:carbon_footprint_tracker/widgets/fade_on_scroll.dart';
 import 'package:flutter/material.dart';
 

@@ -1,8 +1,8 @@
 import 'package:carbon_footprint_tracker/providers/emission_provider.dart';
 import 'package:carbon_footprint_tracker/providers/user_provider.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/app_bar_title_widget.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/app_content.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/home_screen_appbar_content.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/app_bar_title_widget.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/app_content.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/home_screen_appbar_content.dart';
 import 'package:carbon_footprint_tracker/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

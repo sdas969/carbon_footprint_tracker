@@ -1,4 +1,4 @@
-import 'package:carbon_footprint_tracker/views/homescreen/add_data_bottom_sheet_content.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/add_data_bottom_sheet_content.dart';
 import 'package:flutter/material.dart';
 
 class AddDataButton extends StatelessWidget {

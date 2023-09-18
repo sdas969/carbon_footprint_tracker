@@ -1,7 +1,7 @@
 import 'package:carbon_footprint_tracker/providers/emission_provider.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/custom_list_tile.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/date_picker_widget.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/day_button_widget.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/custom_list_tile.dart';
+import 'package:carbon_footprint_tracker/widgets/date_picker_widget.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/day_button_widget.dart';
 import 'package:carbon_footprint_tracker/widgets/loading_widget.dart';
 import 'package:carbon_footprint_tracker/widgets/no_data_widget.dart';
 import 'package:flutter/material.dart';

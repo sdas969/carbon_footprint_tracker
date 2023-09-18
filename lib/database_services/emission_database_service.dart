@@ -13,10 +13,10 @@ class EmissionDatabaseService {
         .collection("emissionData")
         .doc(uid)
         .collection("data")
-        .doc(date.toString())
+        .doc(dateFormat.format(date))
         .collection("data")
         .get();
-    if (data.size > 0) {
+    if (data.size == 0) {
       return [];
     }
     return data.docs
@@ -30,9 +30,26 @@ class EmissionDatabaseService {
         .collection("emissionData")
         .doc(uid)
         .collection("data")
-        .doc(date.toString())
+        .doc(dateFormat.format(date))
         .collection("data")
         .doc(id.toString())
-        .set({"emission": emissionData}, setOptions);
+        .set({"emission": calculatedData(id, emissionData), "id": id},
+            setOptions);
+  }
+
+  double calculatedData(int id, double emissionData) {
+    if (id == 0) {
+      return emissionData * 10 * 2.5;
+    }
+    if (id == 3) {
+      return 0.25 * emissionData;
+    }
+    if (id == 1) {
+      return 0.45 * emissionData;
+    }
+    if (id == 2) {
+      return 0.55 * emissionData;
+    }
+    return emissionData;
   }
 }

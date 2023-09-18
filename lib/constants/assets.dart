@@ -7,3 +7,7 @@ const travelLottieURL = "assets/lottie/travel_and_leisure.json";
 const wasteLottieURL = "assets/lottie/waste_management.json";
 const workLottieURL = "assets/lottie/work_and_business.json";
 const co2LottieURL = "assets/lottie/co2.json";
+const plantLottieURL = "assets/lottie/plant.json";
+const welcomeLottieURL = "assets/lottie/welcome.json";
+const trackLottieURL = "assets/lottie/track.json";
+const entryLottieURL = "assets/lottie/entry.json";

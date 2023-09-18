@@ -1,5 +1,5 @@
 import 'package:carbon_footprint_tracker/constants/bottom_sheet.dart';
-import 'package:carbon_footprint_tracker/views/homescreen/category_widget.dart';
+import 'package:carbon_footprint_tracker/views/homescreen/components/category_widget.dart';
 import 'package:flutter/material.dart';
 
 class AddDataBottomSheetContent extends StatelessWidget {

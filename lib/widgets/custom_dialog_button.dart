@@ -19,17 +19,21 @@ class CustomDialogButton extends StatelessWidget {
       ? Expanded(
           flex: flex,
           child: TextButton(
-              onPressed: onTap,
+              onPressed: isLoading ? null : onTap,
               child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: isLoading
                       ? const Center(child: CircularProgressIndicator())
                       : Text(text, style: const TextStyle(fontSize: 16)))))
       : TextButton(
-          onPressed: onTap,
+          onPressed: isLoading ? null : onTap,
           child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: isLoading
-                  ? const Center(child: CircularProgressIndicator())
+                  ? const Center(
+                      child: SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator()))
                   : Text(text, style: const TextStyle(fontSize: 16))));
 }

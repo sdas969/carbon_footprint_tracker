@@ -1,5 +1,6 @@
 import 'package:carbon_footprint_tracker/constants/bottom_sheet.dart';
 import 'package:carbon_footprint_tracker/models/emission_model.dart';
+import 'package:carbon_footprint_tracker/widgets/kg_co2_meter_widget.dart';
 import 'package:flutter/material.dart';
 
 class CustomListTile extends StatelessWidget {
@@ -15,6 +16,7 @@ class CustomListTile extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Icon(categories[emissionData.id]!.icon))),
-      title: Text(categories[emissionData.id]!.name),
-      trailing: Text("${emissionData.emission} kg"));
+      title: Text(categories[emissionData.id]!.name,
+          style: const TextStyle(fontWeight: FontWeight.bold)),
+      trailing: KgCo2MeterWidget(data: emissionData.emission, size: 18));
 }

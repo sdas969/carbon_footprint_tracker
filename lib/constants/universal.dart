@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 const appTitle = "EcoTrack";
 const List<StretchMode> stretchModes = [
@@ -55,3 +56,5 @@ final AppBarTheme _appBarTheme = AppBarTheme(
 const appButtonColor = Color(0xff49847b);
 final defaultBorderRadius = BorderRadius.circular(20);
 final SetOptions setOptions = SetOptions(merge: true);
+final DateFormat dateFormat = DateFormat("dd-MM-yyyy");
+final numberFormat = NumberFormat.compact(locale: "en_US");
